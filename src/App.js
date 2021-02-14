@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components/macro";
 
-import { Header } from "./components/index.js";
+import { Content } from "./components/index.js";
 
 const Container = styled.div`
   color: black;
@@ -22,7 +22,7 @@ function App() {
   return (
     <AppContainer>
 
-      <Header />
+      <Content />
 
     </AppContainer>
   );
