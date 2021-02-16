@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 import { firebase } from "../lib/firebase.js";
+import { collatedTasks } from "../constants/index.js";
 
 const EQUALS = () => "==";
 const LESS_THAN = () => "<";
@@ -14,9 +15,7 @@ const GREATER_THAN = () => ">";
 const LESS_THAN_EQUALS = () => "<=";
 const GREATER_THAN_EQUALS = () => ">=";
 
-const collatedTasksExist = () => {
-
-};
+const collatedTasksExist = (selectedProject) => collatedTasks.find(task => task.key === selectedProject);
 
 function unsubscribeWhereProjectId(filter, value) {
     switch (filter) {
