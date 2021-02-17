@@ -77,7 +77,7 @@ const getTask = selectedProject => {
         return unsubscribeWhereDate("==", "");
     else
         return false;
-}
+};
 
 const unsubscribeTasks = (selectedProject, { ...hooks }) => {
     /**
@@ -143,7 +143,7 @@ const unsubscribeTasks = (selectedProject, { ...hooks }) => {
     }
 
     return unsubscribe;
-}
+};
 
 export const useTasks = selectedProject => {
     /**
@@ -159,4 +159,30 @@ export const useTasks = selectedProject => {
     }, [selectedProject]);
 
     return { tasks, archivedTasks };
+};
+
+export const useProjects = () => {
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        const allProjects = firebase
+            .firestore()
+            .collection("projects")
+            .where("userId", "==", "i0rFcJf8NGu5FjTZh3xP")
+            .orderBy("projectId")
+            .get()
+            .then(snapshot => {
+                const allProjects = snapshot.docs.map(project => ({
+                    docId: project.id,
+                    ...project.data()
+                }));
+
+                return allProjects;
+            });
+
+        if (JSON.stringify(allProjects) !== JSON.stringify(projects))
+            setProjects(allProjects);
+    }, [projects]);
+
+    return { projects, setProjects };
 };
