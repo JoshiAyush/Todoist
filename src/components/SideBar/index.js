@@ -1,5 +1,8 @@
 /**
- * @file SideBar/index.js 
+ * @file src/Components/SideBar/index.js creates a custom react side bar component for our app that we need to keep the 
+ * menus, inboxand many more components together. This file basically adds a functionality to choose between user's menus,
+ * inbox, next 7 days and many more we also add custom react projects component to this file to show the user what (s)he needs
+ * to accomplish in the next _ time. 
  */
 
 import React from "react";
@@ -55,7 +58,7 @@ function SideBar() {
 
                     </SideBarContainer.Span>
 
-                    <SideBarContainer.Span>Next 7 days</SideBarContainer.Span>
+                    <SideBarContainer.Span>Upcomming</SideBarContainer.Span>
 
                 </SideBarContainer.List>
 
@@ -76,7 +79,7 @@ function SideBar() {
             <SideBarContainer.Projects>
 
 
-                
+
             </SideBarContainer.Projects>
 
         </SideBarContainer>
