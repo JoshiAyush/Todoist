@@ -16,8 +16,8 @@ import { Content } from "./components/index.js";
  */
 const Container = styled.div`
   color: black;
-  font-family: 'Roboto', sans-serif;
   background-color: white;
+  font-family: 'Roboto', sans-serif;
 `;
 
 function AppContainer({ children, ...props }) {
