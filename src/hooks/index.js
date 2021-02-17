@@ -147,7 +147,9 @@ const unsubscribeTasks = (selectedProject, { ...hooks }) => {
 
 export const useTasks = selectedProject => {
     /**
-     * @function useTasks() is a custom hook for our Todoist web application
+     * @function useTasks() is a custom hook for our Todoist web application that provides tasks and archived tasks 
+     * whenever called.
+     * @argument {String} selectedProject is the identifier to identify tasks in the firestore.
      */
     const [tasks, setTasks] = useState([]);
     const [archivedTasks, setArchivedTasks] = useState([]);
