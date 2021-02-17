@@ -118,27 +118,31 @@ const unsubscribeTasks = (selectedProject, { ...hooks }) => {
      */
     unsubscribeWhereProjectId = unsubscribeWhereProjectId.bind(unsubscribeWhereProjectId);
 
-    unsubscribe = getTask(selectedProject) || unsubscribe;
+    try {
+        unsubscribe = (getTask(selectedProject) || unsubscribe).onSnapshot(snapshot => {
+            const newTasks = snapshot.docs.map(task => ({
+                id: task.id,
+                ...task.data()
+            }));
 
-    unsubscribe = unsubscribe.onSnapshot(snapshot => {
-        const newTasks = snapshot.docs.map(task => ({
-            id: task.id,
-            ...task.data()
-        }));
+            const getUpcommings = selectedProject => {
+                if (selectedProject === "UPCOMMING")
+                    return newTasks.filter(
+                        task => moment(task.date, "DD-MM-YYYY").diff(moment(), "days") <= 7 && task.archived !== true
+                    );
+                else
+                    return newTasks.filter(task => task.archived !== true);
+            };
 
-        const getUpcommings = selectedProject => {
-            if (selectedProject === "UPCOMMING")
-                return newTasks.filter(
-                    task => moment(task.date, "DD-MM-YYYY").diff(moment(), "days") <= 7 && task.archived !== true
-                );
-            else
-                return newTasks.filter(task => task.archived !== true);
-        };
+            hooks.setTasks(getUpcommings(selectedProject));
 
-        hooks.setTasks(getUpcommings(selectedProject));
+            hooks.setArchivedTasks(newTasks.filter(task => task.archived === true));
+        });
+    } catch (error) {
+        unsubscribe = false;
+    }
 
-        hooks.setArchivedTasks(newTasks.filter(task => task.archived === true));
-    });
+    return unsubscribe;
 }
 
 export const useTasks = selectedProject => {
@@ -149,6 +153,10 @@ export const useTasks = selectedProject => {
     const [archivedTasks, setArchivedTasks] = useState([]);
 
     useEffect(() => {
-        unsubscribeTasks(selectedProject, { setTasks, setArchivedTasks });
+        let unsubscribe = unsubscribeTasks(selectedProject, { setTasks, setArchivedTasks });
+
+        return () => unsubscribe();
     }, [selectedProject]);
+
+    return { tasks, archivedTasks };
 };
