@@ -1,21 +1,20 @@
 /**
- * * @file title.js creates an icon link for the title tag of our body, it does so by reducing the array
- * * given as IconLink to a single value this link I got from google.
+ * * @file title.js creates an icon link for the title tag of our body, it does so by reducing the array given as IconLink to a 
+ * * single value this link I got from google.
  * 
- * * In case you are wondering why this guy has created this file just for adding a icon on the document title
- * * then let me tell you that I'm a little mad about proramming I don't want to see any kind of non-programming
- * * language on my github repository adding this link to the markup was making it huge and github was not marking
- * * the HTML as others, so I decided to do this and it worked see I'm not a layout designer or some kind of styler
- * * (I don't know if that word exists or not, but you get the point), I'm a programmer, so I love writing huge files
- * * in programming language not in HTML or CSS.
+ * * In case you are wondering why this guy has created this file just for adding a icon on the document title then let me tell 
+ * * you that I'm a little mad about proramming I don't want to see any kind of non-programming language on my github repository 
+ * * adding this link to the markup was making it huge and github was not marking the HTML as others, so I decided to do this and 
+ * * it worked see I'm not a layout designer or some kind of styler (I don't know if that word exists or not, but you get the 
+ * * point), I'm a programmer, so I love writing huge files in programming language not in HTML or CSS.
  * 
- * ! If you still think that this guy is insane then congratulations you are right!  
+ * ! If you still think that this guy is insane then, you know what, you are actually right!  
  */
 
 window.addEventListener("load", () => {
     /**
-     * @callback function() executes when the window is fully loaded, this function forms a link for
-     * the <link /> tag in our body to give a icon to the <title></title> tag. 
+     * @callback function() executes when the window is fully loaded, this function forms a link for the <link /> tag in our body
+     * to give a icon to the <title></title> tag. 
      */
 
     /** 
@@ -74,13 +73,13 @@ window.addEventListener("load", () => {
         "gg=="
     ];
 
-    /* Get the <link /> tag from the document. */
+    /** Get the <link /> tag from the document. */
     const DocLink = document.querySelector("#titleIcon");
 
     const formLink = () => {
         /**
-         * @function formLink() reduces the array (IconLink) to a single value to form a valid icon link for 
-         * the title bar of our app.
+         * @function formLink() reduces the array (IconLink) to a single value to form a valid icon link for the title bar of our
+         * app.
          * 
          * @returns valid icon link. 
          */
@@ -98,6 +97,6 @@ window.addEventListener("load", () => {
         return iconLink;
     };
 
-    /* Set the <link href="" /> to the formed link. */
+    /** Set the <link href="" /> to the formed link. */
     DocLink.setAttribute("href", formLink());
 });

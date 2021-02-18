@@ -1,5 +1,14 @@
 import React from "react";
-import { FaPizzaSlice } from "react-icons/fa";
+
+import Menu from "@material-ui/icons/Menu";
+import AddIcon from "@material-ui/icons/Add";
+import Avatar from "@material-ui/core/Avatar";
+import HomeIcon from "@material-ui/icons/Home";
+import HelpIcon from '@material-ui/icons/Help';
+import SearchIcon from "@material-ui/icons/Search";
+import NotificationsIcon from "@material-ui/icons/Notifications";
+
+import { Productivity } from "../../Svg/index.js";
 
 import { HeaderContainer } from "./style/Header.js";
 
@@ -7,31 +16,29 @@ function Header() {
     return (
         <HeaderContainer>
 
-            <HeaderContainer.Nav>
+            <HeaderContainer.Control>
 
-                <HeaderContainer.Logo>
+                <HeaderContainer.List><Menu /></HeaderContainer.List>
 
-                    <HeaderContainer.Image src={"/images/logo.png"} alt={"Todoist"} />
+                <HeaderContainer.List><HomeIcon /></HeaderContainer.List>
 
-                </HeaderContainer.Logo>
+                <HeaderContainer.List><SearchIcon /></HeaderContainer.List>
 
-                <HeaderContainer.Settings>
+            </HeaderContainer.Control>
 
-                    <HeaderContainer.UnorderedList>
+            <HeaderContainer.Control>
 
-                        <HeaderContainer.List>+</HeaderContainer.List>
+                <HeaderContainer.List><AddIcon /></HeaderContainer.List>
 
-                        <HeaderContainer.List>
+                <HeaderContainer.List><Productivity /></HeaderContainer.List>
 
-                            <FaPizzaSlice />
+                <HeaderContainer.List><HelpIcon /></HeaderContainer.List>
 
-                        </HeaderContainer.List>
+                <HeaderContainer.List><NotificationsIcon /></HeaderContainer.List>
 
-                    </HeaderContainer.UnorderedList>
+                <HeaderContainer.List><Avatar /></HeaderContainer.List>
 
-                </HeaderContainer.Settings>
-
-            </HeaderContainer.Nav>
+            </HeaderContainer.Control>
 
         </HeaderContainer>
     );
