@@ -7,27 +7,31 @@ function Header() {
     return (
         <HeaderContainer>
 
-            <HeaderContainer.Logo>
+            <HeaderContainer.Nav>
 
-                <HeaderContainer.Image src={"/images/logo.png"} alt={"Todoist"} />
+                <HeaderContainer.Logo>
 
-            </HeaderContainer.Logo>
+                    <HeaderContainer.Image src={"/images/logo.png"} alt={"Todoist"} />
 
-            <HeaderContainer.Settings>
+                </HeaderContainer.Logo>
 
-                <HeaderContainer.UnorderedList>
+                <HeaderContainer.Settings>
 
-                    <HeaderContainer.List>+</HeaderContainer.List>
+                    <HeaderContainer.UnorderedList>
 
-                    <HeaderContainer.List>
+                        <HeaderContainer.List>+</HeaderContainer.List>
 
-                        <FaPizzaSlice />
+                        <HeaderContainer.List>
 
-                    </HeaderContainer.List>
+                            <FaPizzaSlice />
 
-                </HeaderContainer.UnorderedList>
+                        </HeaderContainer.List>
 
-            </HeaderContainer.Settings>
+                    </HeaderContainer.UnorderedList>
+
+                </HeaderContainer.Settings>
+
+            </HeaderContainer.Nav>
 
         </HeaderContainer>
     );

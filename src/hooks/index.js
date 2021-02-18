@@ -60,13 +60,12 @@ const getTask = selectedProject => {
     /**
      * @function getTask() triggers the pulling of data through firestore if the given conditions met.
      * @argument {String} selectedProject is the project id that we need to trigger the operations accodingly.
-     * @returns {Object} task whose date if have matches with the given one or whose project id if have matches with the 
-     * given one.
+     * @returns {Object} task whose date if have matches with the given one or whose project id if have matches with the given one.
      * 
      * This function says if the selected project is not in the collated tasks example -> Inbox, Today, Upcomming then just
-     * unsubscribe using the given project id i.e., the variable selectedProject itself because then it would be an identifier
-     * the tasks if the condition fails then it checks if the selected project belongs to 'TODAY' then it returns the TODO that
-     * is marked as today if the selected project belongs to 'INBOX' then it just returns the task where the date is not mentioned.
+     * unsubscribe using the given project id i.e., the variable selectedProject itself because then it would be an identifier the
+     * tasks if the condition fails then it checks if the selected project belongs to 'TODAY' then it returns the TODO that is
+     * marked as today if the selected project belongs to 'INBOX' then it just returns the task where the date is not mentioned.
      * If all the conditions fails then we just return a boolean false. 
      */
     if (selectedProject && !collatedTasksExist(selectedProject))
@@ -91,30 +90,28 @@ const unsubscribeTasks = (selectedProject, { ...hooks }) => {
     let unsubscribe = firebase.firestore().collection("tasks").where("userId", "==", "i0rFcJf8NGu5FjTZh3xP");
 
     /**
-     * Defining a property 'unsubscribe' for function unsubsribeWhereDate() to use it later, we do this so that we
-     * don't need to keep passing the arguments to the function every time we require an unsubscribe event, we can
-     * access the above locally declared 'unsubscribe' object using the 'this' operator in the unsubscribeWhereDate()
-     * function.   
+     * * Defining a property 'unsubscribe' for function unsubsribeWhereDate() to use it later, we do this so that we don't need to
+     * * keep passing the arguments to the function every time we require an unsubscribe event, we can access the above locally
+     * * declared 'unsubscribe' object using the 'this' operator in the unsubscribeWhereDate() function.   
      */
     Object.defineProperty(unsubscribeWhereDate, "unsubscribe", { value: unsubscribe, writable: true });
     /**
-     * Defining a property 'unsubscribe' for function unsubsribeWhereProjectId() to use it later, we do this so that we
-     * don't need to keep passing the arguments to the function every time we require an unsubscribe event, we can
-     * access the above locally declared 'unsubscribe' object using the 'this' operator in the unsubscribeWhereProjectId()
-     * function.   
+     * * Defining a property 'unsubscribe' for function unsubsribeWhereProjectId() to use it later, we do this so that we don't
+     * * need to keep passing the arguments to the function every time we require an unsubscribe event, we can access the above
+     * * locally declared 'unsubscribe' object using the 'this' operator in the unsubscribeWhereProjectId() function.   
      */
     Object.defineProperty(unsubscribeWhereProjectId, "unsubscribe", { value: unsubscribe, writable: true });
 
     /**
-     * Binding the above modified unsubscribeWhereDate() function to the original function because even if we define a
-     * custom property for the unsubscribeWhereDate() function it won't stick with it, in order to keep that stick with the
-     * function unsubscribeWhereDate() we need to bind the original with the modified one. 
+     * * Binding the above modified unsubscribeWhereDate() function to the original function because even if we define a custom
+     * * property for the unsubscribeWhereDate() function it won't stick with it, in order to keep that stick with the function
+     * * unsubscribeWhereDate() we need to bind the original with the modified one. 
      */
     unsubscribeWhereDate = unsubscribeWhereDate.bind(unsubscribeWhereDate);
     /**
-     * Binding the above modified unsubscribeWhereProjectId() function to the original function because even if we define a
-     * custom property for the unsubscribeWhereProjectId() function it won't stick with it, in order to keep that stick with 
-     * the function unsubscribeWhereProjectId() we need to bind the original with the modified one. 
+     * * Binding the above modified unsubscribeWhereProjectId() function to the original function because even if we define a
+     * * custom property for the unsubscribeWhereProjectId() function it won't stick with it, in order to keep that stick with 
+     * * the function unsubscribeWhereProjectId() we need to bind the original with the modified one. 
      */
     unsubscribeWhereProjectId = unsubscribeWhereProjectId.bind(unsubscribeWhereProjectId);
 
@@ -147,8 +144,7 @@ const unsubscribeTasks = (selectedProject, { ...hooks }) => {
 
 export const useTasks = selectedProject => {
     /**
-     * @function useTasks() is a custom hook for our Todoist web application that provides tasks and archived tasks 
-     * whenever called.
+     * @function useTasks() is a custom hook for our Todoist web application that provides tasks and archived tasks whenever called.
      * @argument {String} selectedProject is the identifier to identify tasks in the firestore.
      */
     const [tasks, setTasks] = useState([]);

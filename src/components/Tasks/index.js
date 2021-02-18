@@ -4,8 +4,10 @@ import { Checkbox } from "../index.js";
 
 import { TasksContainer } from "./style/Tasks.js";
 
+import { useTasks } from "../../hooks/index.js";
+
 function Tasks() {
-    const tasks = [];
+    const { tasks } = useTasks('1');
 
     let projectName = "";
 

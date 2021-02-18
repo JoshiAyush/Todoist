@@ -1,8 +1,8 @@
 /**
- * @file src/Components/SideBar/index.js creates a custom react side bar component for our app that we need to keep the 
- * menus, inboxand many more components together. This file basically adds a functionality to choose between user's menus,
- * inbox, next 7 days and many more we also add custom react projects component to this file to show the user what (s)he needs
- * to accomplish in the next _ time. 
+ * @file src/Components/SideBar/index.js creates a custom react side bar component for our app that we need to keep the menus, 
+ * inboxand many more components together. This file basically adds a functionality to choose between user's menus, inbox, next 7 
+ * days and many more we also add custom react projects component to this file to show the user what (s)he needs to accomplish in 
+ * the next _ time. 
  */
 
 import React from "react";
