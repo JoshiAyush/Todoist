@@ -19,5 +19,6 @@ export const GlobalStyles = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         font-family: 'Robot', sans-serif;
         box-sizing: border-box;
+        overflow-x: hidden;
     }
 `;

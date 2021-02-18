@@ -1,6 +1,6 @@
 import React from "react";
 
-import { SvgContainer } from "./style/Productivity.js";
+import { SvgContainer } from "../style/Svg.js";
 
 function Productivity() {
     return (
