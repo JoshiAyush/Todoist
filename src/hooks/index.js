@@ -1,5 +1,7 @@
 /**
- * @file hooks/index.js creates custom hooks like 'useTasks' hooks which basically returns an object. 
+ * @file hooks/index.js creates custom hooks like 'useTasks', 'useProjects' hooks that we will be using later on these hooks
+ * basically returns an object, the former one returns the 'tasks' and the 'archived tasks' needed and the later one returns the
+ * 'projects' and a hook to that project object. 
  */
 
 import { moment } from "moment";
