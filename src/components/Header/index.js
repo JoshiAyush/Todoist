@@ -8,7 +8,7 @@ import HelpIcon from '@material-ui/icons/Help';
 import SearchIcon from "@material-ui/icons/Search";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 
-import { Productivity } from "../../Svg/index.js";
+import { Productivity } from "../../svg/index.js";
 
 import { HeaderContainer } from "./style/Header.js";
 
@@ -22,7 +22,17 @@ function Header() {
 
                 <HeaderContainer.List><HomeIcon /></HeaderContainer.List>
 
-                <HeaderContainer.List><SearchIcon /></HeaderContainer.List>
+                <HeaderContainer.List>
+                    
+                    <HeaderContainer.InputHolder>
+
+                        <HeaderContainer.I><SearchIcon /></HeaderContainer.I>
+
+                        <HeaderContainer.Input placeholder="Find" />
+
+                    </HeaderContainer.InputHolder>
+                    
+                </HeaderContainer.List>
 
             </HeaderContainer.Control>
 
@@ -30,7 +40,17 @@ function Header() {
 
                 <HeaderContainer.List><AddIcon /></HeaderContainer.List>
 
-                <HeaderContainer.List><Productivity /></HeaderContainer.List>
+                <HeaderContainer.List>
+
+                    <HeaderContainer.Span>
+
+                        <Productivity />
+
+                        <HeaderContainer.Span>{"0/5"}</HeaderContainer.Span>
+
+                    </HeaderContainer.Span>
+
+                </HeaderContainer.List>
 
                 <HeaderContainer.List><HelpIcon /></HeaderContainer.List>
 
