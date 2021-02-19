@@ -7,6 +7,7 @@
 
 import React from "react";
 
+import AddIcon from "@material-ui/icons/Add";
 import { FaInbox } from "../../svg/index.js";
 import { FaChevronDown } from "react-icons/fa";
 import { FaRegCalendar } from "../../svg/index.js";
@@ -66,21 +67,75 @@ function SideBar() {
 
             <SideBarContainer.Middle>
 
-                <SideBarContainer.Span>
+                <SideBarContainer.Inner>
 
-                    <FaChevronDown />
+                    <SideBarContainer.Span>
 
-                </SideBarContainer.Span>
+                        <FaChevronDown />
 
-                <SideBarContainer.H2>Projects</SideBarContainer.H2>
+                    </SideBarContainer.Span>
+
+                    <SideBarContainer.H2>Projects</SideBarContainer.H2>
+
+                    <SideBarContainer.Span>
+
+                        <AddIcon />
+
+                    </SideBarContainer.Span>
+
+                </SideBarContainer.Inner>
+
+                <SideBarContainer.Inner></SideBarContainer.Inner>
 
             </SideBarContainer.Middle>
 
-            <SideBarContainer.Projects>
+            <SideBarContainer.Middle>
 
+                <SideBarContainer.Inner>
 
+                    <SideBarContainer.Span>
 
-            </SideBarContainer.Projects>
+                        <FaChevronDown />
+
+                    </SideBarContainer.Span>
+
+                    <SideBarContainer.H2>Labels</SideBarContainer.H2>
+
+                    <SideBarContainer.Span>
+
+                        <AddIcon />
+
+                    </SideBarContainer.Span>
+
+                </SideBarContainer.Inner>
+
+                <SideBarContainer.Inner></SideBarContainer.Inner>
+
+            </SideBarContainer.Middle>
+
+            <SideBarContainer.Middle>
+
+                <SideBarContainer.Inner>
+
+                    <SideBarContainer.Span>
+
+                        <FaChevronDown />
+
+                    </SideBarContainer.Span>
+
+                    <SideBarContainer.H2>Filters</SideBarContainer.H2>
+
+                    <SideBarContainer.Span>
+
+                        <AddIcon />
+
+                    </SideBarContainer.Span>
+
+                </SideBarContainer.Inner>
+
+                <SideBarContainer.Inner></SideBarContainer.Inner>
+
+            </SideBarContainer.Middle>
 
         </SideBarContainer>
     );

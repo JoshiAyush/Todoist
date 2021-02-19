@@ -1,6 +1,7 @@
 import { H2 } from "./style.js";
 import { List } from "./style.js";
 import { Span } from "./style.js";
+import { Inner } from "./style.js";
 import { Middle } from "./style.js";
 import { Projects } from "./style.js";
 import { Container } from "./style.js";
@@ -40,6 +41,12 @@ SideBarContainer.Projects = ({ children, ...props }) => (
     <Projects {...props}>
         {children}
     </Projects>
+);
+
+SideBarContainer.Inner = ({ children, ...props }) => (
+    <Inner {...props}>
+        {children}
+    </Inner>
 );
 
 export function SideBarContainer({ children, ...props }) {

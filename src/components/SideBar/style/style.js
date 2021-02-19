@@ -15,7 +15,7 @@ export const Container = styled.div`
     transition: left .25s cubic-bezier(.4,0,.2,1);
     overflow-x: hidden;
     overflow-y: hidden;
-    background-color: rgb(247, 240, 232);
+    background-color: #fafafa;
     -webkit-touch-callout: none!important;
     -webkit-user-select: none!important;
     -moz-user-select: none!important;
@@ -45,16 +45,44 @@ export const List = styled.li`
     }
 
     &:hover {
-        background-color: rgb(248, 244, 244);
+        background-color: #fff;
     }
+`;
+
+export const Inner = styled.div`
+
 `;
 
 export const Middle = styled.div`
     display: flex;
+    border-bottom: 1px solid #f1f1f1;
+    cursor: pointer;
+
+    & > ${Inner} {
+        display: flex;
+        align-items: center;
+        padding-inline-start: 10px;
+
+        & > ${Span} {
+            transform: rotate(270deg);
+        }
+
+        & > ${Span}:last-of-type {
+            position: absolute;
+            right: 0;
+            margin-right: 18px;
+        }
+    }
+
+    &:hover {
+        background-color: #fff;
+    }
 `;
 
 export const H2 = styled.h2`
-
+    font-weight: normal;
+    font-size: 16px;
+    margin-left: 8px;
 `;
 
 export const Projects = styled.ul`
