@@ -19,3 +19,7 @@ export const Circle = styled.circle`
 export const ClipPath = styled.clipPath`
 
 `;
+
+export const Ellipse = styled.ellipse`
+
+`;
