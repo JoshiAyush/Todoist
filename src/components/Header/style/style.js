@@ -69,8 +69,8 @@ export const Input = styled.input`
     margin: 0;
     border: 1px solid transparent;
     border-radius: 3px;
-    min-width: 250px;
-    width: 100%;
+    max-width: 250px;
+    min-width: 100%;
     box-sizing: border-box;
     outline: 0;
     color: #fff;
@@ -82,17 +82,22 @@ export const Input = styled.input`
     ::placeholder {
         color: white;
         opacity: 1;
+
+        & hover {
+            color: black;
+            opacity: 1;
+        }
+
+        & focus {
+            color: black;
+            opacity: 1;
+        }
     }
 
     &:hover {
         color: #202020;
         background: #fff;
         border: 1px solid transparent;
-
-        ::placeholder {
-            color: white;
-            opacity: 1;
-        }
     }
 
     &:focus {
@@ -101,9 +106,16 @@ export const Input = styled.input`
         border: 1px solid transparent;
         min-width: 400px;
 
-        ::placeholder {
-            color: white;
-            opacity: 1;
+        @media screen and (max-width: 800px) {
+            color: #202020;
+            background: #fff;
+            border: 1px solid transparent;
+            min-width: 250px;
+    
+            ::placeholder {
+                color: white;
+                opacity: 1;
+            }
         }
     }
 `;

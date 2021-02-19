@@ -9,7 +9,7 @@ import React from "react";
 /** Importing default export styled component. */
 import styled from "styled-components/macro";
 /** Importing named export Content react component. */
-import { Content } from "./components/index.js";
+import { Content } from "./pages/index.js";
 
 /**
  *  @var {Object} Container is a react styled component that creates a container for our App() component. 
