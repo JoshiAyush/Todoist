@@ -7,10 +7,10 @@
 
 import React from "react";
 
-import { FaInbox } from "react-icons/fa";
+import { FaInbox } from "../../svg/index.js";
 import { FaChevronDown } from "react-icons/fa";
-import { FaRegCalendar } from "react-icons/fa";
-import { FaRegCalendarAlt } from "react-icons/fa";
+import { FaRegCalendar } from "../../svg/index.js";
+import { FaRegCalendarAlt } from "../../svg/index.js";
 
 import { SideBarContainer } from "./style/SideBar.js";
 

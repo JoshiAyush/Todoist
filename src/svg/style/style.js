@@ -23,3 +23,11 @@ export const ClipPath = styled.clipPath`
 export const Ellipse = styled.ellipse`
 
 `;
+
+export const Text = styled.text`
+
+`;
+
+export const Tspan = styled.tspan`
+
+`;
