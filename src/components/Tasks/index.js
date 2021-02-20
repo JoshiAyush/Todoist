@@ -12,7 +12,7 @@ function Tasks() {
     let projectName = "";
 
     return (
-        <TasksContainer data-testid="tasks">
+        <TasksContainer>
 
             <TasksContainer.Project>{projectName}</TasksContainer.Project>
 
