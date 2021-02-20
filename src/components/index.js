@@ -5,6 +5,7 @@ export { default as Header } from "./Header/index.js";
 export { default as SideBar } from "./SideBar/index.js";
 export { default as Projects } from "./Projects/index.js";
 export { default as Checkbox } from "./Checkbox/index.js";
+export { default as IndividualProject } from "./IndividualProject/index.js";
 
 export { BodyContainer } from "./Body/style/Body.js";
 export { TasksContainer } from "./Tasks/style/Tasks.js";
@@ -13,3 +14,4 @@ export { HeaderContainer } from "./Header/style/Header.js";
 export { SideBarContainer } from "./SideBar/style/SideBar.js";
 export { ProjectsContainer } from "./Projects/style/Projects.js";
 export { CheckboxContainer } from "./Checkbox/style/Checkbox.js";
+export { IndividualProjectContainer } from "./IndividualProject/style/IndividualProject.js";

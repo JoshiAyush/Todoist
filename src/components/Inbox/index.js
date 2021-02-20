@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import { Sort } from "../../svg/index.js";
 import { Comments } from "../../svg/index.js";
 import HelpIcon from "@material-ui/icons/Help";
 
+import { Todoist } from "../../constants/index.js";
 import { useTasks } from "../../hooks/index.js";
 
 import { AllClear } from "../../svg/index.js";
@@ -73,7 +73,7 @@ function Inbox() {
 
                     <InboxContainer.TasksHelp>
 
-                        <InboxContainer.Link href={"https://todoist.com/help/articles/how-to-best-use-the-inbox"}>
+                        <InboxContainer.Link href={Todoist.help}>
                         
                            <HelpIcon /> How to best use the Inbox
 

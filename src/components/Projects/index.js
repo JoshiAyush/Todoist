@@ -5,6 +5,8 @@ import { useState } from "react";
 import { useProjectStateValue } from "../../context/index.js";
 import { useSelectedProjectStateValue } from "../../context/index.js";
 
+import { IndividualProject } from "../index.js";
+
 import { ProjectsContainer } from "./style/Projects.js";
 
 function Projects({ activeNull = null }) {
@@ -31,7 +33,11 @@ function Projects({ activeNull = null }) {
                                     setActive(project);
                                     setSelectedProject(project.id);
                                 }}
-                            ></ProjectsContainer.Project>
+                            >
+
+                                <IndividualProject project={project} />
+
+                            </ProjectsContainer.Project>
                         );
                     })
                 }
