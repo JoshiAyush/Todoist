@@ -50,11 +50,16 @@ export const List = styled.li`
 `;
 
 export const Inner = styled.div`
-
+    &:hover {
+        &:nth-child(1) {
+            background-color: #fff;
+        }
+    }
 `;
 
 export const Middle = styled.div`
     display: flex;
+    flex-direction: column;
     border-bottom: 1px solid #f1f1f1;
     cursor: pointer;
 
@@ -74,10 +79,6 @@ export const Middle = styled.div`
             margin-right: 18px;
             color: rgba(0,0,0,.54);
         }
-    }
-
-    &:hover {
-        background-color: #fff;
     }
 `;
 

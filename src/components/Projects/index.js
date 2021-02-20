@@ -30,7 +30,7 @@ function Projects({ activeNull = null }) {
                                 setActive(project);
                                 setSelectedProject(project.id);
                             }}
-                        >I'm a project</ProjectsContainer.Project>
+                        ></ProjectsContainer.Project>
                     );
                 })
             }
