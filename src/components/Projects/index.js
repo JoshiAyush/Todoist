@@ -8,7 +8,7 @@ import { useSelectedProjectStateValue } from "../../context/index.js";
 import { ProjectsContainer } from "./style/Projects.js";
 
 function Projects({ activeNull = null }) {
-    const refProject = useRef(null);
+    let refProject = useRef(null);
     const [active, setActive] = useState(activeNull);
 
     const { projects } = useProjectStateValue();
@@ -22,7 +22,7 @@ function Projects({ activeNull = null }) {
                     return (
                         <ProjectsContainer.Project
                             key={project.id}
-                            ref={active === project.id ? refProject : null}
+                            ref={active === project.id && refProject}
                             onClick={() => {
                                 refProject.current.style["background-color"] = "#fff";
                                 setActive(project);
