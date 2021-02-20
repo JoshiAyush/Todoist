@@ -148,6 +148,9 @@ export const useTasks = selectedProject => {
     /**
      * @function useTasks() is a custom hook for our Todoist web application that provides tasks and archived tasks whenever called.
      * @argument {String} selectedProject is the identifier to identify tasks in the firestore.
+     * This function calls the unsubscribeTasks() function which basically find out the tasks where the given user Id matches once
+     * it found the tasks it returns them.
+     * @returns tasks and archived tasks.
      */
     const [tasks, setTasks] = useState([]);
     const [archivedTasks, setArchivedTasks] = useState([]);
