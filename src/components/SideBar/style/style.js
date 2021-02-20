@@ -65,12 +65,14 @@ export const Middle = styled.div`
 
         & > ${Span} {
             transform: rotate(270deg);
+            color: rgba(0,0,0,.54);
         }
 
         & > ${Span}:last-of-type {
             position: absolute;
             right: 0;
             margin-right: 18px;
+            color: rgba(0,0,0,.54);
         }
     }
 
