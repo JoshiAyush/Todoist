@@ -1,5 +1,5 @@
 /**
- * @file hooks/index.js creates custom hooks like 'useTasks', 'useProjects' hooks that we will be using later on these hooks
+ * @file hooks/index.js creates custom hooks like 'useTasks', 'useProjects' hooks that we will be using later on, these hooks
  * basically returns an object, the former one returns the 'tasks' and the 'archived tasks' needed and the later one returns the
  * 'projects' and a hook to that project object. 
  */
@@ -162,6 +162,13 @@ export const useTasks = selectedProject => {
 };
 
 export const useProjects = () => {
+    /**
+     * @function useProjects() is a custom hook for our web application. This function goes to the firestore and searches for
+     * projects where the user id matches with the given one, for now I am statically giving the user Id but once I have enabled
+     * the firebase authentication then this operation will be dynamic, once the project document is matched then we pull the
+     * projects from the database and set the projects hook to the pulled projects.
+     * @returns projects and setProject hook. 
+     */
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
@@ -177,6 +184,7 @@ export const useProjects = () => {
                     ...project.data()
                 }));
 
+                /** We only calls the setProjects hook if the projects are changed. */
                 if (JSON.stringify(allProjects) !== JSON.stringify(projects))
                     setProjects(allProjects);
             });
