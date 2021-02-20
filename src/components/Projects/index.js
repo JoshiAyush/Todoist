@@ -17,26 +17,31 @@ function Projects({ activeNull = null }) {
         el.target.style["background-color"] = "#fff";
     }
 
-    return (
-        <ProjectsContainer>
+    if (!projects)
+        return (
+            <ProjectsContainer>
 
-            {
-                projects && projects.map((project) => {
-                    return (
-                        <ProjectsContainer.Project
-                            key={project.id}
-                            onClick={(el) => {
-                                highLight(el);
-                                setActive(project);
-                                setSelectedProject(project.id);
-                            }}
-                        ></ProjectsContainer.Project>
-                    );
-                })
-            }
+                {
+                    projects && projects.map((project) => {
+                        return (
+                            <ProjectsContainer.Project
+                                key={project.id}
+                                onClick={(el) => {
+                                    highLight(el);
+                                    setActive(project);
+                                    setSelectedProject(project.id);
+                                }}
+                            ></ProjectsContainer.Project>
+                        );
+                    })
+                }
 
-        </ProjectsContainer>
-    );
+            </ProjectsContainer>
+        );
+    else
+        return (
+            <></>
+        );
 }
 
 export default Projects;

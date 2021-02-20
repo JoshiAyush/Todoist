@@ -11,6 +11,8 @@ function Body() {
 
             <SideBar />
 
+            <BodyContainer.Hidden />
+
             <Inbox />
 
         </BodyContainer>
