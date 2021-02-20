@@ -4,7 +4,7 @@ import { InboxContainer } from "./style/Inbox.js";
 
 function Inbox() {
     return (
-        <InboxContainer><h1><h1><h1>Comming ALive!</h1></h1></h1></InboxContainer>
+        <InboxContainer><h1><h1><h1>InboxContainer</h1></h1></h1></InboxContainer>
     );
 }
 

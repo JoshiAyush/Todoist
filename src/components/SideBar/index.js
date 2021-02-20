@@ -6,6 +6,7 @@
  */
 
 import React from "react";
+import { useState } from "react";
 
 import AddIcon from "@material-ui/icons/Add";
 import { FaInbox } from "../../svg/index.js";
@@ -13,7 +14,11 @@ import { FaChevronDown } from "react-icons/fa";
 import { FaRegCalendar } from "../../svg/index.js";
 import { FaRegCalendarAlt } from "../../svg/index.js";
 
+import { Projects } from "../index.js";
+
 import { SideBarContainer } from "./style/SideBar.js";
+
+import { useSelectedProjectStateValue } from "../../context/index.js";
 
 function SideBar() {
     /**
@@ -21,9 +26,12 @@ function SideBar() {
      * 
      * @returns
      */
+    const { setSelectedProject } = useSelectedProjectStateValue();
+    const [active, setActive] = useState("inbox");
+    const [showProjects, setShowProjects] = useState(true);
 
     return (
-        <SideBarContainer data-testid="sidebar">
+        <SideBarContainer>
 
             <SideBarContainer.UnorderedList>
 
@@ -85,7 +93,11 @@ function SideBar() {
 
                 </SideBarContainer.Inner>
 
-                <SideBarContainer.Inner></SideBarContainer.Inner>
+                <SideBarContainer.Inner>
+
+                    <Projects />
+
+                </SideBarContainer.Inner>
 
             </SideBarContainer.Middle>
 

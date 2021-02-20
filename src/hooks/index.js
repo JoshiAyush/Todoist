@@ -165,10 +165,10 @@ export const useProjects = () => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        const allProjects = firebase
+        firebase
             .firestore()
             .collection("projects")
-            .where("userId", "==", "i0rFcJf8NGu5FjTZh3xP")
+            .where("userId", "==", "cUT55Mc2xOy7s00RRofh")
             .orderBy("projectId")
             .get()
             .then(snapshot => {
@@ -177,11 +177,9 @@ export const useProjects = () => {
                     ...project.data()
                 }));
 
-                return allProjects;
+                if (JSON.stringify(allProjects) !== JSON.stringify(projects))
+                    setProjects(allProjects);
             });
-
-        if (JSON.stringify(allProjects) !== JSON.stringify(projects))
-            setProjects(allProjects);
     }, [projects]);
 
     return { projects, setProjects };
