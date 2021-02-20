@@ -184,7 +184,7 @@ export const useProjects = () => {
                     ...project.data()
                 }));
 
-                /** We only calls the setProjects hook if the projects are changed. */
+                /** We only call the setProjects hook if the projects are changed. */
                 if (JSON.stringify(allProjects) !== JSON.stringify(projects))
                     setProjects(allProjects);
             });
