@@ -8,11 +8,14 @@ import { useSelectedProjectStateValue } from "../../context/index.js";
 import { ProjectsContainer } from "./style/Projects.js";
 
 function Projects({ activeNull = null }) {
-    let refProject = useRef(null);
     const [active, setActive] = useState(activeNull);
 
     const { projects } = useProjectStateValue();
     const { setSelectedProject } = useSelectedProjectStateValue();
+
+    const highLight = (el) => {
+        el.target.style["background-color"] = "#fff";
+    }
 
     return (
         <ProjectsContainer>
@@ -22,9 +25,8 @@ function Projects({ activeNull = null }) {
                     return (
                         <ProjectsContainer.Project
                             key={project.id}
-                            ref={active === project.id && refProject}
-                            onClick={() => {
-                                refProject.current.style["background-color"] = "#fff";
+                            onClick={(el) => {
+                                highLight(el);
                                 setActive(project);
                                 setSelectedProject(project.id);
                             }}
