@@ -60,8 +60,11 @@ export const Inner = styled.div`
 export const Middle = styled.div`
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid #f1f1f1;
     cursor: pointer;
+    
+    & > ${Inner}:nth-child(1) {
+        border-bottom: 1px solid #f1f1f1;
+    }
 
     & > ${Inner} {
         display: flex;
