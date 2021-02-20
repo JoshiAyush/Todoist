@@ -89,7 +89,7 @@ const unsubscribeTasks = (selectedProject, { ...hooks }) => {
      */
 
     /** Creating an object 'unsubsribe' to hold the 'tasks' collection data. */
-    let unsubscribe = firebase.firestore().collection("tasks").where("userId", "==", "i0rFcJf8NGu5FjTZh3xP");
+    let unsubscribe = firebase.firestore().collection("tasks").where("userId", "==", "m6but3S2p9ljf2Xk68Wx");
 
     /**
      * * Defining a property 'unsubscribe' for function unsubsribeWhereDate() to use it later, we do this so that we don't need to
@@ -168,7 +168,7 @@ export const useProjects = () => {
         firebase
             .firestore()
             .collection("projects")
-            .where("userId", "==", "cUT55Mc2xOy7s00RRofh")
+            .where("userId", "==", "m6but3S2p9ljf2Xk68Wx")
             .orderBy("projectId")
             .get()
             .then(snapshot => {
