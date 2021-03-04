@@ -10,4 +10,4 @@ In the project directory, you can run:
 
 ![Todoist](./public/images/Todoist.png)
 
-**Only the GUI for Inbox is coded, you won't get any functionality for task management yet.**
+**Only the GUI for Inbox is coded, you won't get any functionality for task management.**
